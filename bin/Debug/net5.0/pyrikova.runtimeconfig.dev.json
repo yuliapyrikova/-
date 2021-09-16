@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\pyrik\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\pyrik\\.nuget\\packages"
+    ]
+  }
+}
