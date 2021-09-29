@@ -11,7 +11,6 @@ C:\Users\pyrik\Documents\GitHub\pyrikova\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\Users\pyrik\Documents\GitHub\pyrikova\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\pyrik\Documents\GitHub\pyrikova\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\pyrik\Documents\GitHub\pyrikova\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.csprojAssemblyReference.cache
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.AssemblyInfoInputs.cache
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.AssemblyInfo.cs
@@ -27,3 +26,4 @@ C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.dll
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\ref\pyrikova.dll
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.pdb
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.genruntimeconfig.cache
+C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.csproj.AssemblyReference.cache
