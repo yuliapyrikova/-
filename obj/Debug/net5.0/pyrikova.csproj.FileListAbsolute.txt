@@ -26,4 +26,3 @@ C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.dll
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\ref\pyrikova.dll
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.pdb
 C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.genruntimeconfig.cache
-C:\Users\pyrik\Documents\GitHub\pyrikova\obj\Debug\net5.0\pyrikova.csproj.AssemblyReference.cache
