@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\pyrikova.csproj",
+      "projectUniqueName": "C:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\pyrikova.csproj",
       "projectName": "pyrikova",
-      "projectPath": "c:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\pyrikova.csproj",
+      "projectPath": "C:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\pyrikova.csproj",
       "packagesPath": "C:\\Users\\pyrik\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\obj\\",
+      "outputPath": "C:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -254,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
