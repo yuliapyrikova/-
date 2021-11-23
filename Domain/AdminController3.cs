@@ -1,6 +1,6 @@
 ﻿class Admin
 {
-    public string ScheduleCode { get; set; }
-    public string News { get; set; }
-    public string Subscription { get; set; }
+    public int ScheduleCode { get; set; }
+    public int News { get; set; }
+    public int Subscription { get; set; }
 }
