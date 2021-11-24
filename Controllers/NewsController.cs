@@ -1,34 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using pyrikova.Domain;
+using pyrikova.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
-    [Route("/news"]
-    public class NewsController1 : ControllerBase
+    [Route("/news")]
+    public class NewsController : ControllerBase
     {
         [HttpPut]
-        public string Create(string str)
+        public News Create(News news)
         {
-            return str;
+            Storage.NewsStorage.Create(news);
+            return news; // Метод создания
         }
 
         [HttpGet]
-        public string Read(string str)
+        public News Read(int placementCode)
         {
-            return str;
+            return Storage.NewsStorage.Read(placementCode); // Метод чтения
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str;
+            return str; // Метод обновления
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str;
+            return str; // Метод удаления
         }
     }
 }
-

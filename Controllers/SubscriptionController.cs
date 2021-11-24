@@ -1,34 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using pyrikova.Domain;
+using pyrikova.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
     [Route("/subscription")]
-    public class SubscriptionController1 : ControllerBase
+    public class SubscriptionController : ControllerBase
     {
         [HttpPut]
-        public string Create(string str)
+        public Subscription Create(Subscription subscription)
         {
-            return str;
+            Storage.SubscriptionStorage.Create(subscription);
+            return subscription; // Метод создания
         }
 
         [HttpGet]
-        public string Read(string str)
+        public Subscription Read(int subscriptionNumber)
         {
-            return str;
+            return Storage.SubscriptionStorage.Read(subscriptionNumber); // Метод чтения
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str;
+            return str; // Метод обновления
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str;
+            return str; // Метод удаления
         }
     }
 }
-

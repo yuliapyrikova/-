@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
-    public class ScheduleStorage5
+    public class ScheduleStorage
     {
         private Dictionary<int, Schedule> Schedules { get; } = new Dictionary<int, Schedule>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public ScheduleStorage5() => Connection.Open();
+        //public ScheduleStorage() => Connection.Open();
 
         public void Create(Schedule schedule)
         {

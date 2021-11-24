@@ -1,27 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using pyrikova.Domain;
+using pyrikova.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
- 
     [ApiController]
-    [Route("/coach")]
-    public class CoachController : ControllerBase
+    [Route("/infAboutTheCoach")]
+    public class InfAboutTheCoachController : ControllerBase
     {
-        [HttpGet]
-        [Route("/coach/FollowTheSchedule")]
-
-        public string FollowTheSchedule(string str)
+        [HttpPut]
+        public InfAboutTheCoach Create(InfAboutTheCoach infAboutTheCoach)
         {
-            return "Метод наблюдения за собственным расписанием";
+            Storage.InfAboutTheCoachStorage.Create(infAboutTheCoach);
+            return infAboutTheCoach; // Метод создания
         }
 
         [HttpGet]
-        [Route("/coach/VisitorInformation")]
-
-        public string VisitorInformation(string str)
+        public InfAboutTheCoach Read(int trainerCode)
         {
-            return "Метод просматривания информации о записавшемся";
+            return Storage.InfAboutTheCoachStorage.Read(trainerCode); // Метод чтения
+        }
+
+        [HttpPatch]
+        public string Update(string str)
+        {
+            return str; // Метод обновления
+        }
+
+        [HttpDelete]
+        public string Delete(string str)
+        {
+            return str; // Метод удаления
         }
     }
 }
-

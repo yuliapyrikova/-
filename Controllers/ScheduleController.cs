@@ -1,34 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using pyrikova.Domain;
+using pyrikova.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
     [Route("/schedule")]
-    public class ScheduleController1 : ControllerBase
+    public class ScheduleController : ControllerBase
     {
         [HttpPut]
-        public string Create(string str)
+        public Schedule Create(Schedule schedule)
         {
-            return str;
+            Storage.ScheduleStorage.Create(schedule);
+            return schedule; // Метод создания
         }
 
         [HttpGet]
-        public string Read(string str)
+        public Schedule Read(int scheduleCode)
         {
-            return str;
+            return Storage.ScheduleStorage.Read(scheduleCode); // Метод чтения
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str;
+            return str; // Метод обновления
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str;
+            return str; // Метод удаления
         }
     }
 }
-

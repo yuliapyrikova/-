@@ -1,34 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using pyrikova.Domain;
+using pyrikova.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
-    [Route("/Feedback")]
-    public class FeedbackController1 : ControllerBase
+    [Route("/feedback")]
+    public class FeedbackController : ControllerBase
     {
         [HttpPut]
-        public string Create(string str)
+        public Feedback Create(Feedback feedback)
         {
-            return str;
+            Storage.FeedbackStorage.Create(feedback);
+            return feedback; // Метод создания
         }
 
         [HttpGet]
-        public string Read(string str)
+        public Feedback Read(int reviewCode)
         {
-            return str;
+            return Storage.AdminStorage.Read(reviewCode); // Метод чтения
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str;
+            return str; // Метод обновления
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str;
+            return str; // Метод удаления
         }
     }
 }
-

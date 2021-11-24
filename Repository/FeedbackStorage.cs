@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
-    public class FeedbackStorage4
+    public class FeedbackStorage
     {
         private Dictionary<int, Feedback> Feedbacks { get; } = new Dictionary<int, Feedback>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public FeedbackStorage4() => Connection.Open();
+        //public FeedbackStorage() => Connection.Open();
 
         public void Create(Feedback feedback)
         {

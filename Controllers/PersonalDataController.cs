@@ -1,32 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using pyrikova.Domain;
+using pyrikova.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
-    [Route("/visitor")]
-    public class VisitorController : ControllerBase
+    [Route("/personalData")]
+    public class PersonalDataController : ControllerBase
     {
-        [HttpGet]
-        [Route("/visitor/MonitorsTheSubscription")]
-
-        public string MonitorsTheSubscription(string str)
+        [HttpPut]
+        public PersonalData Create(PersonalData personalData)
         {
-            return "Метод наблюдения за абонементом";
+            Storage.PersonalDataStorage.Create(personalData);
+            return news; // Метод создания
         }
 
         [HttpGet]
-        [Route("/visitor/Record")]
-        public string Record(string str)
+        public PersonalData Read(int visitorCode)
         {
-            return "Метод записи на тренировку";
+            return Storage.PersonalDataStorage.Read(visitorCode); // Метод чтения
         }
 
-        [HttpGet]
-        [Route("/visitor/Feedback")]
-
-        public string Feedback(string str)
+        [HttpPatch]
+        public string Update(string str)
         {
-            return "Метод написания отзыва";
+            return str; // Метод обновления
+        }
+
+        [HttpDelete]
+        public string Delete(string str)
+        {
+            return str; // Метод удаления
         }
     }
 }

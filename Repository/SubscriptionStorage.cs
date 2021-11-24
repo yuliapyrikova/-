@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
-    public class SubscriptionStorage2
+    public class SubscriptionStorage
     {
         private Dictionary<int, Subscription> Subscriptions { get; } = new Dictionary<int, Subscription>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public SubscriptionStorage2() => Connection.Open();
+        //public SubscriptionStorage() => Connection.Open();
 
         public void Create(Subscription subscription)
         {

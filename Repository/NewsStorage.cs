@@ -4,15 +4,15 @@ using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
-    public class AdminStorage1
+    public class NewsStorage
     {
-        private Dictionary<int, Admin> Admins { get; } = new Dictionary<int, Admin>();
+        private Dictionary<int, News> Newss { get; } = new Dictionary<int, News>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public AdminStorage1() => Connection.Open();
+        //public NewsStorage() => Connection.Open();
 
-        public void Create(Admin admin)
+        public void Create(News news)
         {
-            Admins.Add(admin.AdminCode, admin);
+            Newss.Add(news.PlacementCode, news);
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -20,20 +20,20 @@ namespace pyrikova.Repository
             //command.ExecuteScalar
         }
 
-        public Admin Read(int adminCode)
+        public News Read(int placementCode)
         {
-            return Admins[adminCode];
+            return Newss[placementCode];
         }
 
-        public Admin Update(int authorCode, Author newAuthor)
+        public News Update(int placementCode, News newNews)
         {
-            Admins[adminCode] = newAdmin;
-            return Admins[adminCode];
+            Newss[placementCode] = newNews;
+            return Newss[placementCode];
         }
 
-        public bool Delete(int adminCode)
+        public bool Delete(int placementCode)
         {
-            return Admins.Remove(adminCode);
+            return Newss.Remove(placementCode);
         }
     }
 }

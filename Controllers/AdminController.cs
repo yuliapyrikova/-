@@ -1,51 +1,41 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using pyrikova.Domain;
+using pyrikova.Repository;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
-
     [ApiController]
     [Route("/admin")]
     public class AdminController : ControllerBase
     {
-        [HttpGet]
-        [Route("/admin/Extradite")]
-
-        public string Extradite(string str)
+        [HttpPut]
+        public Admin Create(Admin admin)
         {
-            return "Метод выдачи абонемента";
+            Storage.AdminStorage.Create(admin);
+            return admin; // Метод создания
         }
 
         [HttpGet]
-        [Route("/admin/Extension")]
-
-        public string Extension(string str)
+        public Admin Read(int adminCode)
         {
-            return "Метод продления абонемента";
+            return Storage.AdminStorage.Read(adminCode); // Метод чтения
         }
 
-        [HttpGet]
-        [Route("/admin/Scheduling")]
-
-        public string Scheduling(string str)
+        [HttpPatch]
+        public string Update(string str)
         {
-            return "Метод составления расписания тренировок";
+            return str; // Метод обновления
         }
 
-        [HttpGet]
-        [Route("/admin/Requestt")]
-
-        public string Requestt(string str)
+        [HttpDelete]
+        public string Delete(string str)
         {
-            return "Метод запроса отзыва";
-        }
-
-        [HttpGet]
-        [Route("/admin/NewsFeed")]
-
-        public string NewsFeed(string str)
-        {
-            return "Метод ведения ленты новостей";
+            return str; // Метод удаления
         }
     }
 }
-

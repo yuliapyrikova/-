@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
-    public class InfAboutTheRecStorage7
+    public class InfAboutTheRecStorage
     {
         private Dictionary<int, InfAboutTheRec> InfAboutTheRecs { get; } = new Dictionary<int, InfAboutTheRec>();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public InfAboutTheRecStorage7() => Connection.Open();
+        //public InfAboutTheRecStorage() => Connection.Open();
 
         public void Create(InfAboutTheRec infAboutTheRec)
         {
