@@ -30,10 +30,5 @@ namespace pyrikova.Repository
             InfAboutTheCoachs[trainerCode] = newInfAboutTheCoach;
             return InfAboutTheCoachs[trainerCode];
         }
-
-        public bool Delete(int trainerCode)
-        {
-            return InfAboutTheCoachs.Remove(trainerCode);
-        }
     }
 }

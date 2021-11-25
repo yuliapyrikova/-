@@ -24,16 +24,5 @@ namespace pyrikova.Repository
         {
             return PersonalDatas[visitorCode];
         }
-
-        public PersonalData Update(int visitorCode, PersonalData newPersonalData)
-        {
-            PersonalDatas[visitorCode] = newPersonalData;
-            return PersonalDatas[visitorCode];
-        }
-
-        public bool Delete(int visitorCode)
-        {
-            return PersonalDatas.Remove(visitorCode);
-        }
     }
 }

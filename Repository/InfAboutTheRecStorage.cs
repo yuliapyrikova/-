@@ -30,10 +30,5 @@ namespace pyrikova.Repository
             InfAboutTheRecs[recordCode] = newInfAboutTheRec;
             return InfAboutTheRecs[recordCode];
         }
-
-        public bool Delete(int recordCode)
-        {
-            return InfAboutTheRecs.Remove(recordCode);
-        }
     }
 }
