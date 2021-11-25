@@ -1,18 +1,19 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace pyrikova.Repository
 {
     public class SubscriptionStorage
     {
-        private readonly Dictionary<int, Subscription> _Subscriptions = new();
+        private readonly Dictionary<int, Subscription> _subscriptions = new();
 
-        public WorkoutRecord Create(Subscription subscription)
+        public Subscription Create(Subscription subscription)
         {
             // var number = _subscriptions.Keys.Last() + 1;
             var number = _subscriptions.Keys.Max() + 1;
-            subscription.Number = id;
+            subscription.Number = number;
             _subscriptions.Add(subscription.Number, subscription);
             return subscription;
             //var command = Subscription.CreateCommand();
@@ -24,18 +25,18 @@ namespace pyrikova.Repository
 
         public Subscription Read(int number)
         {
-            return Subscriptions[number];
+            return _subscriptions[number];
         }
 
         public Subscription Update(int subscriptionCode, Subscription newSubscription)
         {
-            Subscriptions[number] = newSubscription;
-            return Subscriptions[number];
+            _subscriptions[subscriptionCode] = newSubscription;
+            return _subscriptions[subscriptionCode];
         }
 
         public bool Delete(int number)
         {
-            return Subscriptions.Remove(number);
+            return _subscriptions.Remove(number);
         }
     }
 }

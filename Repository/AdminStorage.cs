@@ -1,6 +1,7 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace pyrikova.Repository
 {
@@ -24,18 +25,18 @@ namespace pyrikova.Repository
 
         public Admin Read(int adminCode)
         {
-            return Admins[adminCode];
+            return _admins[adminCode];
         }
 
         public Admin Update(int id, Admin newAdmin)
         {
-            Admins[id] = newAdmin;
-            return Admins[id];
+            _admins[id] = newAdmin;
+            return _admins[id];
         }
 
         public bool Delete(int id)
         {
-            return Admins.Remove(id);
+            return _admins.Remove(id);
         }
     }
 }

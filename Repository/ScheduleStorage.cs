@@ -1,6 +1,7 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace pyrikova.Repository
 {
@@ -24,18 +25,18 @@ namespace pyrikova.Repository
 
         public Schedule Read(int id)
         {
-            return Schedules[id];
+            return _schedules[id];
         }
 
         public Schedule Update(int id, Schedule newSchedule)
         {
-            Schedules[id] = newSchedule;
-            return Schedules[id];
+            _schedules[id] = newSchedule;
+            return _schedules[id];
         }
 
         public bool Delete(int id)
         {
-            return Schedules.Remove(id);
+            return _schedules.Remove(id);
         }
     }
 }

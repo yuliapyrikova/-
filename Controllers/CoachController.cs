@@ -11,8 +11,7 @@ namespace pyrikova.Controllers
         [HttpPut]
         public Coach Create(Coach coach)
         {
-            Storage.CoachStorage.Create(Coach);
-            return Coach; // Метод создания
+            return Storage.InfAboutTheCoachStorage.Create(coach);
         }
 
         [HttpGet]

@@ -1,6 +1,7 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace pyrikova.Repository
 {
@@ -24,13 +25,13 @@ namespace pyrikova.Repository
 
         public WorkoutRecord Read(int id)
         {
-            return WorkoutRecords[id];
+            return _workoutRecords[id];
         }
 
         public WorkoutRecord Update(int id, WorkoutRecord newWorkoutRecord)
         {
-            WorkoutRecords[id] = newWorkoutRecord;
-            return WorkoutRecords[id];
+            _workoutRecords[id] = newWorkoutRecord;
+            return _workoutRecords[id];
         }
     }
 }

@@ -1,19 +1,19 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Linq;
 
 namespace pyrikova.Repository
 {
     public class CoachStorage
     {
-        private readonly Dictionary<int, Coach> _coachs = new();
+        private readonly Dictionary<int, Coach> _coaches = new();
 
         public Coach Create(Coach coach)
         {
             // var id = _coachs.Keys.Last() + 1;
-            var id = _coachs.Keys.Max() + 1;
+            var id = _coaches.Keys.Max() + 1;
             coach.Id = id;
-            _coachs.Add(coach.Id, coach);
+            _coaches.Add(coach.Id, coach);
             return coach;
             //var command = Coach.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
@@ -24,13 +24,13 @@ namespace pyrikova.Repository
 
         public Coach Read(int id)
         {
-            return Coachs[id];
+            return _coaches[id];
         }
 
         public Coach Update(int id, Coach newCoach)
         {
-            Coachs[id] = newCoach;
-            return Coachs[id];
+            _coaches[id] = newCoach;
+            return _coaches[id];
         }
     }
 }
