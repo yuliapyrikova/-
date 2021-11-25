@@ -6,13 +6,13 @@ namespace pyrikova.Repository
 {
     public class FeedbackStorage
     {
-        private Dictionary<int, Feedback> Feedbacks { get; } = new Dictionary<int, Feedback>();
+        private readonly Dictionary<int, Feedback> _feedbacks = new();
         //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
         //public FeedbackStorage() => Connection.Open();
 
         public void Create(Feedback feedback)
         {
-            Feedbacks.Add(feedback.ReviewCode, feedback);
+            _feedbacks.Add(feedback.ReviewCode, feedback);
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -22,18 +22,18 @@ namespace pyrikova.Repository
 
         public Feedback Read(int reviewCode)
         {
-            return Feedbacks[reviewCode];
+            return _feedbacks[reviewCode];
         }
 
         public Feedback Update(int reviewCode, Feedback newFeedback)
         {
-            Feedbacks[reviewCode] = newFeedback;
-            return Feedbacks[reviewCode];
+            _feedbacks[reviewCode] = newFeedback;
+            return _feedbacks[reviewCode];
         }
 
         public bool Delete(int reviewCode)
         {
-            return Feedbacks.Remove(reviewCode);
+            return _feedbacks.Remove(reviewCode);
         }
     }
 }

@@ -1,0 +1,14 @@
+﻿using System;
+
+namespace pyrikova.Domain
+{
+    public class Coach
+    {
+        public int Code { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string FullName { get; set; }
+        public string Schedule { get; set; }
+        public int Experience { get; set; }
+        public float Rating { get; set; }
+    }
+}

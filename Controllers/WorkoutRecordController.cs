@@ -9,7 +9,7 @@ namespace pyrikova.Controllers
 {
     [ApiController]
     [Route("/infAboutTheRec")]
-    public class InfAboutTheRecController : ControllerBase
+    public class WorkoutRecordController : ControllerBase
     {
         [HttpPut]
         public InfAboutTheRec Create(InfAboutTheRec infAboutTheRec)

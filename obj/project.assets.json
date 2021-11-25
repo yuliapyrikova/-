@@ -193,19 +193,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pyrik\\.nuget\\packages\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\pyrikova.csproj",
+      "projectUniqueName": "D:\\rsreu\\03_practice\\0315\\Pyrikova\\pyrikova.csproj",
       "projectName": "pyrikova",
-      "projectPath": "C:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\pyrikova.csproj",
-      "packagesPath": "C:\\Users\\pyrik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pyrik\\Documents\\GitHub\\pyrikova\\obj\\",
+      "projectPath": "D:\\rsreu\\03_practice\\0315\\Pyrikova\\pyrikova.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\rsreu\\03_practice\\0315\\Pyrikova\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pyrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -254,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

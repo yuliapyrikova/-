@@ -1,15 +1,11 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using pyrikova.Domain;
-using pyrikova.Repository;
+﻿using pyrikova.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
     [Route("/infAboutTheCoach")]
-    public class InfAboutTheCoachController : ControllerBase
+    public class CoachController : ControllerBase
     {
         [HttpPut]
         public InfAboutTheCoach Create(InfAboutTheCoach infAboutTheCoach)

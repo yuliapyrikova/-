@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pyrikova", "..\pyrikova.csproj", "{E4D6FF16-A09D-48B6-9D2C-5BC8C901CB78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pyrikova", "pyrikova.csproj", "{E4D6FF16-A09D-48B6-9D2C-5BC8C901CB78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
