@@ -1,9 +1,6 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using pyrikova.Domain;
+﻿using pyrikova.Domain;
 using pyrikova.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
@@ -19,9 +16,9 @@ namespace pyrikova.Controllers
         }
 
         [HttpGet]
-        public Subscription Read(int subscriptionNumber)
+        public Subscription Read(int number)
         {
-            return Storage.SubscriptionStorage.Read(subscriptionNumber); // Метод чтения
+            return Storage.SubscriptionStorage.Read(number); // Метод чтения
         }
 
         [HttpPatch]

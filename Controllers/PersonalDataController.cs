@@ -1,9 +1,6 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using pyrikova.Domain;
+﻿using pyrikova.Domain;
 using pyrikova.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
@@ -19,9 +16,9 @@ namespace pyrikova.Controllers
         }
 
         [HttpGet]
-        public PersonalData Read(int visitorCode)
+        public PersonalData Read(int id)
         {
-            return Storage.PersonalDataStorage.Read(visitorCode); // Метод чтения
+            return Storage.PersonalDataStorage.Read(id); // Метод чтения
         }
 
         [HttpPatch]

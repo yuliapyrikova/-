@@ -1,27 +1,24 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using pyrikova.Domain;
+﻿using pyrikova.Domain;
 using pyrikova.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
-    [Route("/infAboutTheRec")]
+    [Route("/workoutRecord")]
     public class WorkoutRecordController : ControllerBase
     {
         [HttpPut]
-        public InfAboutTheRec Create(InfAboutTheRec infAboutTheRec)
+        public WorkoutRecord Create(WorkoutRecord workoutRecord)
         {
-            Storage.InfAboutTheRecStorage.Create(infAboutTheRec);
-            return infAboutTheRec; // Метод создания
+            Storage.WorkoutRecordStorage.Create(workoutRecord);
+            return workoutRecord; // Метод создания
         }
 
         [HttpGet]
-        public InfAboutTheRec Read(int recordCode)
+        public WorkoutRecord Read(int id)
         {
-            return Storage.InfAboutTheRecStorage.Read(recordCode); // Метод чтения
+            return Storage.WorkoutRecordStorage.Read(id); // Метод чтения
         }
 
         [HttpPatch]

@@ -16,9 +16,9 @@ namespace pyrikova.Controllers
         }
 
         [HttpGet]
-        public Admin Read(int adminCode)
+        public Admin Read(int id)
         {
-            return Storage.AdminStorage.Read(adminCode); // Метод чтения
+            return Storage.AdminStorage.Read(id); // Метод чтения
         }
 
         [HttpPatch]

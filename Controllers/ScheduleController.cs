@@ -1,9 +1,6 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using pyrikova.Domain;
+﻿using pyrikova.Domain;
 using pyrikova.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace pyrikova.Controllers
 {
@@ -19,9 +16,9 @@ namespace pyrikova.Controllers
         }
 
         [HttpGet]
-        public Schedule Read(int scheduleCode)
+        public Schedule Read(int id)
         {
-            return Storage.ScheduleStorage.Read(scheduleCode); // Метод чтения
+            return Storage.ScheduleStorage.Read(id); // Метод чтения
         }
 
         [HttpPatch]

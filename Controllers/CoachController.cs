@@ -1,23 +1,24 @@
-﻿using pyrikova.Repository;
+﻿using pyrikova.Domain;
+using pyrikova.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace pyrikova.Controllers
 {
     [ApiController]
-    [Route("/infAboutTheCoach")]
+    [Route("/coach")]
     public class CoachController : ControllerBase
     {
         [HttpPut]
-        public InfAboutTheCoach Create(InfAboutTheCoach infAboutTheCoach)
+        public Coach Create(Coach coach)
         {
-            Storage.InfAboutTheCoachStorage.Create(infAboutTheCoach);
-            return infAboutTheCoach; // Метод создания
+            Storage.CoachStorage.Create(Coach);
+            return Coach; // Метод создания
         }
 
         [HttpGet]
-        public InfAboutTheCoach Read(int trainerCode)
+        public Coach Read(int id)
         {
-            return Storage.InfAboutTheCoachStorage.Read(trainerCode); // Метод чтения
+            return Storage.InfAboutTheCoachStorage.Read(id); // Метод чтения
         }
 
         [HttpPatch]

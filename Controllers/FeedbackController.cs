@@ -16,9 +16,9 @@ namespace pyrikova.Controllers
         }
 
         [HttpGet]
-        public Feedback Read(int reviewCode)
+        public Feedback Read(int id)
         {
-            return Storage.FeedbackStorage.Read(reviewCode); // Метод чтения
+            return Storage.FeedbackStorage.Read(id); // Метод чтения
         }
 
         [HttpPatch]

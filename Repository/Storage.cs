@@ -3,12 +3,12 @@ namespace pyrikova.Repository
     public static class Storage
     {
         public static readonly AdminStorage AdminStorage = new();
-        public static FeedbackStorage FeedbackStorage { get; } = new FeedbackStorage();
-        public static InfAboutTheCoachStorage InfAboutTheCoachStorage { get; } = new InfAboutTheCoachStorage();
-        public static InfAboutTheRecStorage InfAboutTheRecStorage { get; } = new InfAboutTheRecStorage();
-        public static NewsStorage NewsStorage { get; } = new NewsStorage();
-        public static PersonalDataStorage PersonalDataStorage { get; } = new PersonalDataStorage();
-        public static ScheduleStorage ScheduleStorage { get; } = new ScheduleStorage();
-        public static SubscriptionStorage SubscriptionStorage { get; } = new SubscriptionStorage();
+        public static readonly FeedbackStorage FeedbackStorage = new();
+        public static readonly CoachStorage InfAboutTheCoachStorage = new();
+        public static readonly WorkoutRecordStorage WorkoutRecordStorage = new();
+        public static readonly NewsStorage NewsStorage = new();
+        public static readonly PersonalDataStorage PersonalDataStorage = new();
+        public static readonly ScheduleStorage ScheduleStorage = new();
+        public static readonly SubscriptionStorage SubscriptionStorage = new();
     }
 }

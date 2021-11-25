@@ -2,12 +2,30 @@
 
 namespace pyrikova.Domain
 {
+    /// <summary>
+    /// Отзывы
+    /// </summary>
     public class Feedback
     {
-        public int Code { get; set; } //код отзыва
-        public DateTime DateRecord { get; set; } //дата отзыва
-        public int CoachsCode { get; set; } //код тренера
-        public int Estimation { get; set; } //оценка
-        public string Comment { get; set; } //комментарий
+        /// <summary>
+        /// Код отзывв
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// Дата и время отзыва
+        /// </summary>
+        public DateTime DateRecall { get; set; }
+        /// <summary>
+        /// Код тренера
+        /// </summary>
+        public int CoachsCode { get; set; }
+        /// <summary>
+        /// Оценка
+        /// </summary>
+        public int Estimation { get; set; }
+        /// <summary>
+        /// Комметарий
+        /// </summary>
+        public string Comment { get; set; }
     }
 }

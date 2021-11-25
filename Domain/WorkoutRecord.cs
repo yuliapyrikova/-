@@ -2,10 +2,22 @@
 
 namespace pyrikova.Domain
 {
+    /// <summary>
+    /// Запись на тренировку
+    /// </summary>
     public class WorkoutRecord
     {
-        public int RecordCode { get; set; } //код записи
-        public DateTime TimeAndDateOfRecording { get; set; } //дата и время записи
-        public string TrainerFullName { get; set; } //ФИО тренера
+        /// <summary>
+        /// Код записи
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// Дата и время записи
+        /// </summary>
+        public DateTime TimeAndDateOfRecording { get; set; }
+        /// <summary>
+        /// ФИО тренера
+        /// </summary>
+        public string TrainerFullName { get; set; }
     }
 }

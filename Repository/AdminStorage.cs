@@ -6,14 +6,16 @@ namespace pyrikova.Repository
 {
     public class AdminStorage
     {
-        private Dictionary<int, Admin> Admins { get; } = new Dictionary<int, Admin>();
-        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public AdminStorage() => Connection.Open();
+        private readonly Dictionary<int, Admin> _admins = new();
 
-        public void Create(Admin admin)
+        public Admin Create(Admin admin)
         {
-            Admins.Add(admin.AdminCode, admin);
-            //var command = Connection.CreateCommand();
+            // var id = _admins.Keys.Last() + 1;
+            var id = _admins.Keys.Max() + 1;
+            admin.Id = id;
+            _admins.Add(admin.Id, admin);
+            return admin;
+            //var command = Admin.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
@@ -25,15 +27,15 @@ namespace pyrikova.Repository
             return Admins[adminCode];
         }
 
-        public Admin Update(int authorCode, Author newAuthor)
+        public Admin Update(int id, Admin newAdmin)
         {
-            Admins[adminCode] = newAdmin;
-            return Admins[adminCode];
+            Admins[id] = newAdmin;
+            return Admins[id];
         }
 
-        public bool Delete(int adminCode)
+        public bool Delete(int id)
         {
-            return Admins.Remove(adminCode);
+            return Admins.Remove(id);
         }
     }
 }

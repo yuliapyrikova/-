@@ -7,33 +7,35 @@ namespace pyrikova.Repository
     public class FeedbackStorage
     {
         private readonly Dictionary<int, Feedback> _feedbacks = new();
-        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public FeedbackStorage() => Connection.Open();
 
-        public void Create(Feedback feedback)
+        public Feedback Create(Feedback feedback)
         {
-            _feedbacks.Add(feedback.ReviewCode, feedback);
-            //var command = Connection.CreateCommand();
+            // var id = _feedbacks.Keys.Last() + 1;
+            var id = _feedbacks.Keys.Max() + 1;
+            feedback.Id = id;
+            _feedbacks.Add(feedback.Id, feedback);
+            return feedback;
+            //var command = Feedback.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public Feedback Read(int reviewCode)
+        public Feedback Read(int id)
         {
-            return _feedbacks[reviewCode];
+            return _feedbacks[id];
         }
 
-        public Feedback Update(int reviewCode, Feedback newFeedback)
+        public Feedback Update(int id, Feedback newFeedback)
         {
-            _feedbacks[reviewCode] = newFeedback;
-            return _feedbacks[reviewCode];
+            _feedbacks[id] = newFeedback;
+            return _feedbacks[id];
         }
 
-        public bool Delete(int reviewCode)
+        public bool Delete(int id)
         {
-            return _feedbacks.Remove(reviewCode);
+            return _feedbacks.Remove(id);
         }
     }
 }

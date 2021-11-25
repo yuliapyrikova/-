@@ -2,11 +2,26 @@
 
 namespace pyrikova.Domain
 {
+    /// <summary>
+    /// Расписание
+    /// </summary>
     public class Schedule
     {
-        public int Code { get; set; } //код расписания
-        public DateTime FreeDays { get; set; } //свободные дни
-        public DateTime BusyDays { get; set; } //занятые дни
+        /// <summary>
+        /// Код расписания
+        /// </summary>
+        public int Code { get; set; }
+        /// <summary>
+        /// Свободные время и дата
+        /// </summary>
+        public DateTime FreeDays { get; set; }
+        /// <summary>
+        /// Занятые время и дата
+        /// </summary>
+        public DateTime BusyDays { get; set; }
+        /// <summary>
+        /// Код тренера
+        /// </summary>
         public int TrainerCode { get; set; } //код тренера
     }
 }

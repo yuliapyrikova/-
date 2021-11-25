@@ -6,34 +6,36 @@ namespace pyrikova.Repository
 {
     public class SubscriptionStorage
     {
-        private Dictionary<int, Subscription> Subscriptions { get; } = new Dictionary<int, Subscription>();
-        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public SubscriptionStorage() => Connection.Open();
+        private readonly Dictionary<int, Subscription> _Subscriptions = new();
 
-        public void Create(Subscription subscription)
+        public WorkoutRecord Create(Subscription subscription)
         {
-            Subscriptions.Add(subscription.SubscriptionCode, subscription);
-            //var command = Connection.CreateCommand();
+            // var number = _subscriptions.Keys.Last() + 1;
+            var number = _subscriptions.Keys.Max() + 1;
+            subscription.Number = id;
+            _subscriptions.Add(subscription.Number, subscription);
+            return subscription;
+            //var command = Subscription.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public Subscription Read(int subscriptionNumber)
+        public Subscription Read(int number)
         {
-            return Subscriptions[subscriptionNumber];
+            return Subscriptions[number];
         }
 
         public Subscription Update(int subscriptionCode, Subscription newSubscription)
         {
-            Subscriptions[subscriptionCode] = newSubscription;
-            return Subscriptions[subscriptionNumber];
+            Subscriptions[number] = newSubscription;
+            return Subscriptions[number];
         }
 
-        public bool Delete(int subscriptionNumber)
+        public bool Delete(int number)
         {
-            return Subscriptions.Remove(subscriptionNumber);
+            return Subscriptions.Remove(number);
         }
     }
 }

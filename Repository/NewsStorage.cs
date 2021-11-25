@@ -6,34 +6,34 @@ namespace pyrikova.Repository
 {
     public class NewsStorage
     {
-        private Dictionary<int, News> Newss { get; } = new Dictionary<int, News>();
-        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
-        //public NewsStorage() => Connection.Open();
-
-        public void Create(News news)
+        public News Create(News news)
         {
-            Newss.Add(news.PlacementCode, news);
-            //var command = Connection.CreateCommand();
+            // var id = _newss.Keys.Last() + 1;
+            var id = _newss.Keys.Max() + 1;
+            news.Id = id;
+            _newss.Add(news.Id, news);
+            return news;
+            //var command = News.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public News Read(int placementCode)
+        public News Read(int id)
         {
-            return Newss[placementCode];
+            return Newss[id];
         }
 
-        public News Update(int placementCode, News newNews)
+        public News Update(int id, News newNews)
         {
-            Newss[placementCode] = newNews;
-            return Newss[placementCode];
+            Newss[id] = newNews;
+            return Newss[id];
         }
 
-        public bool Delete(int placementCode)
+        public bool Delete(int id)
         {
-            return Newss.Remove(placementCode);
+            return Newss.Remove(id);
         }
     }
 }
