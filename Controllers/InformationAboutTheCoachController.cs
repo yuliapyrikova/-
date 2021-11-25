@@ -35,5 +35,11 @@ namespace pyrikova.Controllers
         {
             return str; // Метод удаления
         }
+
+        [HttpDelete]
+        public string EnterAccount(string str)
+        {
+            return str; // Метод входа в личный кабинет
+        }
     }
 }

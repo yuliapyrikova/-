@@ -37,5 +37,29 @@ namespace pyrikova.Controllers
         {
             return str; // Метод удаления
         }
+
+        [HttpGet]
+        public string Scheduling(string str)
+        {
+            return str; // Метод составления расписания
+        }
+
+        [HttpGet]
+        public string RequestForFeedback(string str)
+        {
+            return str; // Метод запроса отзыва
+        }
+
+        [HttpGet]
+        public string Management(string str)
+        {
+            return str; // Метод управления абонементами
+        }
+
+        [HttpGet]
+        public string CreatingNews(string str)
+        {
+            return str; // Метод создания ленты новостей
+        }
     }
 }

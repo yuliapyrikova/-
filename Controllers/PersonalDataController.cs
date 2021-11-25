@@ -35,5 +35,11 @@ namespace pyrikova.Controllers
         {
             return str; // Метод удаления
         }
+
+        [HttpGet]
+        public string EnterSite(string str)
+        {
+            return str; // Метод входа на сайт
+        }
     }
 }
