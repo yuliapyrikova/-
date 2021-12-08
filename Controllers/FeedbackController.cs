@@ -12,25 +12,25 @@ namespace pyrikova.Controllers
         public Feedback Create(Feedback feedback)
         {
             Storage.FeedbackStorage.Create(feedback);
-            return feedback; // Метод создания
+            return feedback;
         }
 
         [HttpGet]
-        public Feedback Read(int id)
+        public Feedback Read(int feedbackId)
         {
-            return Storage.FeedbackStorage.Read(id); // Метод чтения
+            return Storage.FeedbackStorage.Read(feedbackId);
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str; // Метод обновления
+            return str;
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str; // Метод удаления
+            return str;
         }
     }
 }

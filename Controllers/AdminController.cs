@@ -12,25 +12,25 @@ namespace pyrikova.Controllers
         public Admin Create(Admin admin)
         {
             Storage.AdminStorage.Create(admin);
-            return admin; // Метод создания
+            return admin;
         }
 
         [HttpGet]
-        public Admin Read(int id)
+        public Admin Read(int adminId)
         {
-            return Storage.AdminStorage.Read(id); // Метод чтения
+            return Storage.AdminStorage.Read(adminId);
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str; // Метод обновления
+            return str;
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str; // Метод удаления
+            return str;
         }
 
         [HttpGet]

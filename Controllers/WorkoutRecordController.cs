@@ -12,25 +12,25 @@ namespace pyrikova.Controllers
         public WorkoutRecord Create(WorkoutRecord workoutRecord)
         {
             Storage.WorkoutRecordStorage.Create(workoutRecord);
-            return workoutRecord; // Метод создания
+            return workoutRecord;
         }
 
         [HttpGet]
-        public WorkoutRecord Read(int id)
+        public WorkoutRecord Read(int workoutRecordId)
         {
-            return Storage.WorkoutRecordStorage.Read(id); // Метод чтения
+            return Storage.WorkoutRecordStorage.Read(workoutRecordId);
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str; // Метод обновления
+            return str;
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str; // Метод удаления
+            return str;
         }
     }
 }

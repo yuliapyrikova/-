@@ -1,42 +1,39 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace pyrikova.Repository
 {
     public class FeedbackStorage
     {
-        private readonly Dictionary<int, Feedback> _feedbacks = new();
+        private Dictionary<int, Feedback> Feedbacks { get; } = new Dictionary<int, Feedback>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public FeedbackStorage() => Connection.Open();
 
-        public Feedback Create(Feedback feedback)
+        public void Create(Feedback feedback)
         {
-            // var id = _feedbacks.Keys.Last() + 1;
-            var id = _feedbacks.Keys.Max() + 1;
-            feedback.Id = id;
-            _feedbacks.Add(feedback.Id, feedback);
-            return feedback;
-            //var command = Feedback.CreateCommand();
+            Feedbacks.Add(feedback.FeedbackId, feedback);
+            //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public Feedback Read(int id)
+        public Feedback Read(int feedbackId)
         {
-            return _feedbacks[id];
+            return Feedbacks[feedbackId];
         }
 
-        public Feedback Update(int id, Feedback newFeedback)
+        public Feedback Update(int feedbackId, Feedback newFeedback)
         {
-            _feedbacks[id] = newFeedback;
-            return _feedbacks[id];
+            Feedbacks[feedbackId] = newFeedback;
+            return Feedbacks[feedbackId];
         }
 
-        public bool Delete(int id)
+        public bool Delete(int feedbackId)
         {
-            return _feedbacks.Remove(id);
+            return Feedbacks.Remove(feedbackId);
         }
     }
 }

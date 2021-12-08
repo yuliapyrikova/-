@@ -4,7 +4,7 @@ namespace pyrikova.Repository
     {
         public static readonly AdminStorage AdminStorage = new();
         public static readonly FeedbackStorage FeedbackStorage = new();
-        public static readonly CoachStorage InfAboutTheCoachStorage = new();
+        public static readonly CoachStorage CoachStorage = new();
         public static readonly WorkoutRecordStorage WorkoutRecordStorage = new();
         public static readonly NewsStorage NewsStorage = new();
         public static readonly PersonalDataStorage PersonalDataStorage = new();

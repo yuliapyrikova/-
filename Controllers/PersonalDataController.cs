@@ -15,27 +15,27 @@ namespace pyrikova.Controllers
         }
 
         [HttpGet]
-        public PersonalData Read(int id)
+        public PersonalData Read(int personalDataId)
         {
-            return Storage.PersonalDataStorage.Read(id); // Метод чтения
+            return Storage.PersonalDataStorage.Read(personalDataId);
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str; // Метод обновления
+            return str;
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str; // Метод удаления
+            return str;
         }
 
         [HttpGet]
         public string EnterSite(string str)
         {
-            return str; // Метод входа на сайт
+            return str;
         }
     }
 }

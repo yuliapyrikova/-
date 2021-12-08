@@ -11,25 +11,25 @@ namespace pyrikova.Controllers
         [HttpPut]
         public Coach Create(Coach coach)
         {
-            return Storage.InfAboutTheCoachStorage.Create(coach);
+            return Storage.CoachStorage.Create(coach);
         }
 
         [HttpGet]
-        public Coach Read(int id)
+        public Coach Read(int coachId)
         {
-            return Storage.InfAboutTheCoachStorage.Read(id); // Метод чтения
+            return Storage.CoachStorage.Read(coachId);
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str; // Метод обновления
+            return str;
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str; // Метод удаления
+            return str;
         }
 
         [HttpDelete]

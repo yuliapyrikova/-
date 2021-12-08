@@ -12,25 +12,25 @@ namespace pyrikova.Controllers
         public News Create(News news)
         {
             Storage.NewsStorage.Create(news);
-            return news; // Метод создания
+            return news;
         }
 
         [HttpGet]
-        public News Read(int id)
+        public News Read(int newsId)
         {
-            return Storage.NewsStorage.Read(id); // Метод чтения
+            return Storage.NewsStorage.Read(newsId);
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str; // Метод обновления
+            return str;
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str; // Метод удаления
+            return str;
         }
     }
 }

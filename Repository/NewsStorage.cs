@@ -1,41 +1,39 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
     public class NewsStorage
     {
-        private readonly Dictionary<int, News> _newsStorage = new();
-        
-        public News Create(News news)
+        private Dictionary<int, News> Newss { get; } = new Dictionary<int, News>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public NewsStorage() => Connection.Open();
+
+        public void Create(News news)
         {
-            // var id = _newss.Keys.Last() + 1;
-            var id = _newsStorage.Keys.Max() + 1;
-            news.Id = id;
-            _newsStorage.Add(news.Id, news);
-            return news;
-            //var command = News.CreateCommand();
+            Newss.Add(news.NewsId, news);
+            //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public News Read(int id)
+        public News Read(int newsId)
         {
-            return _newsStorage[id];
+            return Newss[newsId];
         }
 
-        public News Update(int id, News newNews)
+        public News Update(int newsId, News newNews)
         {
-            _newsStorage[id] = newNews;
-            return _newsStorage[id];
+            Newss[newsId] = newNews;
+            return Newss[newsId];
         }
 
-        public bool Delete(int id)
+        public bool Delete(int newsId)
         {
-            return _newsStorage.Remove(id);
+            return Newss.Remove(newsId);
         }
     }
 }

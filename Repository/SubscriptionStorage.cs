@@ -1,42 +1,39 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace pyrikova.Repository
 {
     public class SubscriptionStorage
     {
-        private readonly Dictionary<int, Subscription> _subscriptions = new();
+        private Dictionary<int, Subscription> Subscriptions { get; } = new Dictionary<int, Subscription>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public SubscriptionStorage() => Connection.Open();
 
-        public Subscription Create(Subscription subscription)
+        public void Create(Subscription subscription)
         {
-            // var number = _subscriptions.Keys.Last() + 1;
-            var number = _subscriptions.Keys.Max() + 1;
-            subscription.Number = number;
-            _subscriptions.Add(subscription.Number, subscription);
-            return subscription;
-            //var command = Subscription.CreateCommand();
+            Subscriptions.Add(subscription.SubscriptionNumber, subscription);
+            //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public Subscription Read(int number)
+        public Subscription Read(int subscriptionNumber)
         {
-            return _subscriptions[number];
+            return Subscriptions[subscriptionNumber];
         }
 
-        public Subscription Update(int subscriptionCode, Subscription newSubscription)
+        public Subscription Update(int subscriptionNumber, Subscription newSubscription)
         {
-            _subscriptions[subscriptionCode] = newSubscription;
-            return _subscriptions[subscriptionCode];
+            Subscriptions[subscriptionNumber] = newSubscription;
+            return Subscriptions[subscriptionNumber];
         }
 
-        public bool Delete(int number)
+        public bool Delete(int subscriptionNumber)
         {
-            return _subscriptions.Remove(number);
+            return Subscriptions.Remove(subscriptionNumber);
         }
     }
 }

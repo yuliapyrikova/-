@@ -1,37 +1,32 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace pyrikova.Repository
 {
     public class WorkoutRecordStorage
     {
-        private readonly Dictionary<int, WorkoutRecord> _workoutRecords = new();
+        private Dictionary<int, WorkoutRecord> WorkoutRecords { get; } = new Dictionary<int, WorkoutRecord>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public WorkoutRecordStorage() => Connection.Open();
 
-        public WorkoutRecord Create(WorkoutRecord workoutRecord)
+        public void Create(WorkoutRecord workoutRecord)
         {
-            // var id = _workoutRecords.Keys.Last() + 1;
-            var id = _workoutRecords.Keys.Max() + 1;
-            workoutRecord.Id = id;
-            _workoutRecords.Add(workoutRecord.Id, workoutRecord);
-            return workoutRecord;
-            //var command = WorkoutRecord.CreateCommand();
+            WorkoutRecords.Add(workoutRecord.workoutRecordId, workoutRecord);
+            //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public WorkoutRecord Read(int id)
+        public WorkoutRecord Read(int workoutRecordId)
         {
-            return _workoutRecords[id];
+            return WorkoutRecords[workoutRecordId];
         }
 
-        public WorkoutRecord Update(int id, WorkoutRecord newWorkoutRecord)
+        public WorkoutRecord Update(int workoutRecordId, WorkoutRecord newWorkoutRecord)
         {
-            _workoutRecords[id] = newWorkoutRecord;
-            return _workoutRecords[id];
+            WorkoutRecords[workoutRecordId] = newWorkoutRecord;
+            return WorkoutRecords[workoutRecordId];
         }
-    }
-}

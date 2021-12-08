@@ -12,25 +12,25 @@ namespace pyrikova.Controllers
         public Schedule Create(Schedule schedule)
         {
             Storage.ScheduleStorage.Create(schedule);
-            return schedule; // Метод создания
+            return schedule;
         }
 
         [HttpGet]
-        public Schedule Read(int id)
+        public Schedule Read(int scheduleId)
         {
-            return Storage.ScheduleStorage.Read(id); // Метод чтения
+            return Storage.ScheduleStorage.Read(scheduleId);
         }
 
         [HttpPatch]
         public string Update(string str)
         {
-            return str; // Метод обновления
+            return str;
         }
 
         [HttpDelete]
         public string Delete(string str)
         {
-            return str; // Метод удаления
+            return str;
         }
     }
 }

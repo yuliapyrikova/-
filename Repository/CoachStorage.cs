@@ -1,36 +1,39 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
     public class CoachStorage
     {
-        private readonly Dictionary<int, Coach> _coaches = new();
+        private Dictionary<int, Coach> Coachs { get; } = new Dictionary<int, Coach>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public CoachStorage() => Connection.Open();
 
-        public Coach Create(Coach coach)
+        public void Create(Coach coach)
         {
-            // var id = _coachs.Keys.Last() + 1;
-            var id = _coaches.Keys.Max() + 1;
-            coach.Id = id;
-            _coaches.Add(coach.Id, coach);
-            return coach;
-            //var command = Coach.CreateCommand();
+            Coachs.Add(coach.CoachId, coach);
+            //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public Coach Read(int id)
+        public Coach Read(int coachId)
         {
-            return _coaches[id];
+            return Coachs[coachId];
         }
 
-        public Coach Update(int id, Coach newCoach)
+        public Coach Update(int coachId, Coach newCoach)
         {
-            _coaches[id] = newCoach;
-            return _coaches[id];
+            Coachs[coachId] = newCoach;
+            return Coachs[coachId];
+        }
+
+        public bool Delete(int coachId)
+        {
+            return Coachs.Remove(coachId);
         }
     }
 }

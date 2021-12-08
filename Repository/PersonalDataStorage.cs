@@ -1,17 +1,26 @@
 ﻿using pyrikova.Domain;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace pyrikova.Repository
 {
     public class PersonalDataStorage
     {
-        public PersonalData Create(PersonalData personalData)
+        private Dictionary<int, PersonalData> PersonalDatas { get; } = new Dictionary<int, PersonalData>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public PersonalDataStorage() => Connection.Open();
+
+        public void Create(PersonalData personalData)
         {
-            throw new System.NotImplementedException();
+            PersonalDatas.Add(personalData.PersonalDataId, personalData);
+            //var command = Connection.CreateCommand();
+            //command.CommandText = "SELECT * FROM .....";
+            //command.ExecuteNonQuery
+            //command.ExecuteReader
+            //command.ExecuteScalar
         }
 
-        public PersonalData Read(int id)
+        public PersonalData Read(int personalDataId)
         {
-            throw new System.NotImplementedException();
+            return PersonalDatas[personalDataId];
         }
-    }
-}

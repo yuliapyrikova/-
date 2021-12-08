@@ -1,42 +1,39 @@
 ﻿using pyrikova.Domain;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 
 namespace pyrikova.Repository
 {
     public class ScheduleStorage
     {
-        private readonly Dictionary<int, Schedule> _schedules = new();
+        private Dictionary<int, Schedule> Schedules { get; } = new Dictionary<int, Schedule>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public ScheduleStorage() => Connection.Open();
 
-        public Schedule Create(Schedule schedule)
+        public void Create(Schedule schedule)
         {
-            // var id = _schedules.Keys.Last() + 1;
-            var id = _schedules.Keys.Max() + 1;
-            schedule.Id = id;
-            _schedules.Add(schedule.Id, schedule);
-            return schedule;
-            //var command = Schedule.CreateCommand();
+            Schedules.Add(schedule.ScheduleId, schedule);
+            //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
             //command.ExecuteReader
             //command.ExecuteScalar
         }
 
-        public Schedule Read(int id)
+        public Schedule Read(int scheduleId)
         {
-            return _schedules[id];
+            return Schedules[scheduleId];
         }
 
-        public Schedule Update(int id, Schedule newSchedule)
+        public Schedule Update(int scheduleId, Schedule newSchedule)
         {
-            _schedules[id] = newSchedule;
-            return _schedules[id];
+            Schedules[scheduleId] = newSchedule;
+            return Schedules[scheduleId];
         }
 
-        public bool Delete(int id)
+        public bool Delete(int scheduleId)
         {
-            return _schedules.Remove(id);
+            return Schedules.Remove(scheduleId);
         }
     }
 }
