@@ -11,7 +11,8 @@ namespace pyrikova.Controllers
         [HttpPut]
         public PersonalData Create(PersonalData personalData)
         {
-            return Storage.PersonalDataStorage.Create(personalData);
+            Storage.PersonalDataStorage.Create(personalData);
+            return personalData;
         }
 
         [HttpGet]

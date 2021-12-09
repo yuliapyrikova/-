@@ -10,7 +10,7 @@ namespace pyrikova.Domain
         /// <summary>
         /// Код отзывв
         /// </summary>
-        public int Id { get; set; }
+        public int FeedbackId { get; set; }
         /// <summary>
         /// Дата и время отзыва
         /// </summary>

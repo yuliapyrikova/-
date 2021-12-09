@@ -10,7 +10,7 @@ namespace pyrikova.Domain
         /// <summary>
         /// Код пользователя
         /// </summary>
-        public int Id { get; set; }
+        public int PersonalDataId { get; set; }
         /// <summary>
         /// Дата активации абонемента
         /// </summary>

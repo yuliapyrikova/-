@@ -12,7 +12,7 @@ namespace pyrikova.Repository
 
         public void Create(WorkoutRecord workoutRecord)
         {
-            WorkoutRecords.Add(workoutRecord.workoutRecordId, workoutRecord);
+            WorkoutRecords.Add(workoutRecord.WorkoutRecordId, workoutRecord);
             //var command = Connection.CreateCommand();
             //command.CommandText = "SELECT * FROM .....";
             //command.ExecuteNonQuery
@@ -30,3 +30,5 @@ namespace pyrikova.Repository
             WorkoutRecords[workoutRecordId] = newWorkoutRecord;
             return WorkoutRecords[workoutRecordId];
         }
+    }
+}

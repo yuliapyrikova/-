@@ -10,7 +10,7 @@ namespace pyrikova.Domain
         /// <summary>
         /// Код тренера
         /// </summary>
-        public int Id { get; set; }
+        public int CoachId { get; set; }
         /// <summary>
         /// Дата рождения тренера
         /// </summary>

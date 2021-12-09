@@ -10,7 +10,7 @@ namespace pyrikova.Domain
         /// <summary>
         /// Код расписания
         /// </summary>
-        public int Id { get; set; }
+        public int ScheduleId { get; set; }
         /// <summary>
         /// Свободные время и дата
         /// </summary>

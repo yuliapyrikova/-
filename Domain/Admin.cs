@@ -8,7 +8,7 @@
         /// <summary>
         /// Код администратора
         /// </summary>
-        public int Id { get; set; }
+        public int AdminId { get; set; }
         /// <summary>
         /// Новости
         /// </summary>

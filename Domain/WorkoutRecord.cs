@@ -10,7 +10,7 @@ namespace pyrikova.Domain
         /// <summary>
         /// Код записи
         /// </summary>
-        public int Id { get; set; }
+        public int WorkoutRecordId { get; set; }
         /// <summary>
         /// Дата и время записи
         /// </summary>

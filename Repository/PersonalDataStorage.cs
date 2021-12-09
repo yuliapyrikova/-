@@ -24,3 +24,5 @@ namespace pyrikova.Repository
         {
             return PersonalDatas[personalDataId];
         }
+    }
+}

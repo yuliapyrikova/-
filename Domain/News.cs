@@ -8,7 +8,7 @@
         /// <summary>
         /// Код новости
         /// </summary>
-        public int Id { get; set; } 
+        public int NewsId { get; set; } 
         /// <summary>
         /// Заголовок новости
         /// </summary>
