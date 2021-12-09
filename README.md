@@ -129,7 +129,7 @@ namespace pyrikova.Domain
         public int Subscription { get; set; }
     }
 }
-```s C#
+s C#```
 
 Создаём классы для других сущностей:
 
