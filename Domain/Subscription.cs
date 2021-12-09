@@ -2,18 +2,12 @@
 
 namespace pyrikova.Domain
 {
-    /// <summary>
-    /// Абонемент 
-    /// </summary>
+
     public class Subscription
     {
-        /// <summary>
-        /// Номер абонемента
-        /// </summary>
+
         public int SubscriptionNumber { get; set; }
-        /// <summary>
-        /// Дата активации абонемента
-        /// </summary>
+
         public DateTime DateOfAction { get; set; }
     }
 }
