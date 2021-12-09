@@ -33,7 +33,7 @@ namespace pyrikova.Controllers
             return str;
         }
 
-        [HttpGet]
+        [HttpPost("enter-site")]
         public string EnterSite(string str)
         {
             return str;

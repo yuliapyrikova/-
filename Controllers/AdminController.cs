@@ -21,7 +21,7 @@ namespace pyrikova.Controllers
             return Storage.AdminStorage.Read(adminId);
         }
 
-        [HttpPatch]
+        [HttpPost]
         public string Update(string str)
         {
             return str;
@@ -33,26 +33,20 @@ namespace pyrikova.Controllers
             return str;
         }
 
-        [HttpGet]
+        [HttpGet("get-shedule")]
         public string Scheduling(string str)
         {
             return str; // Метод составления расписания
         }
 
-        [HttpGet]
+        [HttpGet("request-feedback")]
         public string RequestForFeedback(string str)
         {
             return str; // Метод запроса отзыва
         }
 
-        [HttpGet]
-        public string Management(string str)
-        {
-            return str; // Метод управления абонементами
-        }
-
-        [HttpGet]
-        public string CreatingNews(string str)
+        [HttpPost("create-news")]
+        public string CreateNews(string str)
         {
             return str; // Метод создания ленты новостей
         }

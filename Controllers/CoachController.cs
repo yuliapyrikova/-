@@ -33,7 +33,7 @@ namespace pyrikova.Controllers
             return str;
         }
 
-        [HttpDelete]
+        [HttpPost("enter-account")]
         public string EnterAccount(string str)
         {
             return str; // Метод входа в личный кабинет
