@@ -115,7 +115,8 @@
 
 На основе ER-диаграммы создаём класс с указанием полей, параметров и типов данных для каждой сущности. Приведём пример создания класса для сущности Admin.
 
-```namespace pyrikova.Domain
+```s C#
+namespace pyrikova.Domain
 {
 
     public class Admin
@@ -128,7 +129,7 @@
         public int Subscription { get; set; }
     }
 }
-```
+```s C#
 
 Создаём классы для других сущностей:
 
