@@ -137,7 +137,7 @@ namespace pyrikova.Domain
 
 Далее для каждой сущности создаём контроллеры с методами Create, Read, Update, Delite. Приведём пример создания контроллера для сущности Admin:
 
-```C# 
+```csharp 
 using pyrikova.Domain;
 using pyrikova.Repository;
 using Microsoft.AspNetCore.Mvc;
