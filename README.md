@@ -155,33 +155,15 @@
         }
 
         [HttpPost]
-        public string Update(string str)
+        public string Update(int adminId)
         {
-            return str;
+            return adminId;
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public string Delete(int adminId)
         {
-            return str;
-        }
-
-        [HttpGet("get-shedule")]
-        public string Scheduling(string str)
-        {
-            return str; // Метод составления расписания
-        }
-
-        [HttpGet("request-feedback")]
-        public string RequestForFeedback(string str)
-        {
-            return str; // Метод запроса отзыва
-        }
-
-        [HttpPost("create-news")]
-        public string CreateNews(string str)
-        {
-            return str; // Метод создания ленты новостей
+            return adminId;
         }
     }
 }
