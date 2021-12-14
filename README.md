@@ -99,51 +99,41 @@
 
 ## 3.1 Проектирование информационной системы <a name="проектирование"></a> 
 
-Разработка информационной системы начинается с создания USE-CASE диаграммы, отображающей действующие лица данной системы: Адмиристратор, Тренер, Посетитель.
+Разработка информационной системы начинается с создания USE-CASE диаграммы (или диаграмма потоковых данных), отображающей действующие лица данной системы: Адмиристратор, Тренер, Посетитель (рисунок 1).
 <p align="center">
 <img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/UseCase.png?raw=true"></p>
 <p align="center">Рисунок 1 - UseCase диаграмма</p>
 
-Далее на основе USE-CASE диаграммы создаётся BPMN (Business Process Management Notation - Нотация моделирования бизнес-процессов) диаграмма, которая представляет собой описание графических элементов, используемых для построения схемы протекания рабочего процесса. Как минимум, такая схема нужна, чтобы выстроить в соответствии с ней бизнес-процесс и понятно регламентировать его для всех участников.
+Далее на основе USE-CASE диаграммы создаётся BPMN (Business Process Management Notation - Нотация моделирования бизнес-процессов) диаграмма, которая представляет собой описание графических элементов, используемых для построения схемы протекания рабочего процесса (рисунок 2). Как минимум, такая схема нужна, чтобы выстроить в соответствии с ней бизнес-процесс и понятно регламентировать его для всех участников.
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/BPMN.png?raw=true"></p>
+<p align="center">Рисунок 2 - BPMN диаграмма</p>
 
-![alt text](ph/BPMN.png)
+Завершающей диаграммой является ER-диаграмма, в которой показано, как разные "сущности" (люди, объекты и т.д.) связаны между собой внутри системы (рисунок 3).
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/EReng.png?raw=true"></p>
+<p align="center">Рисунок 3 - ER-диаграмма</p>
 
-Завершающей диаграммой является ER-диаграмма, в которой показано, как разные "сущности" (люди, объекты и т.д.) связаны между собой внутри системы.
-
-![alt text](ph/EReng.png)
+***
 
 ## 3.2 Реализация информационной системы <a name="реализация"></a>
 
-На основе ER-диаграммы создаём класс с указанием полей, параметров и типов данных для каждой сущности. Приведём пример создания класса для сущности Admin.
-
+На основе ER-диаграммы создаём класс с указанием полей, параметров и типов данных для каждой сущности. Приведём пример создания класса для сущности Admin (листинг 1):
+Листинг 1 - Класс "Администатор"
 ```C# 
-namespace pyrikova.Domain
-{
-
     public class Admin
     {
-
         public int AdminId { get; set; }
-
         public int New { get; set; }
-
         public int Subscription { get; set; }
     }
-}
 ```
 
-Создаём классы для других сущностей:
+Таким же образом создаём классы для таких сущностей ER-диаграммы как Тренер, Отзыв, Новости, Личные данные, Расписание, Абонемент и Запись на тренировку.
 
-![alt text](ph/1.png)
-
-Далее для каждой сущности создаём контроллеры с методами Create, Read, Update, Delite. Приведём пример создания контроллера для сущности Admin:
-
+Далее для каждой сущности создаём контроллеры с методами Create, Read, Update, Delite. Приведём пример создания контроллера для сущности Admin (листинг 2):
+Листинг 2 - Контроллер класса "Администатор"
 ```csharp 
-using pyrikova.Domain;
-using pyrikova.Repository;
-using Microsoft.AspNetCore.Mvc;
-
-namespace pyrikova.Controllers
 {
     [ApiController]
     [Route("/admin")]
@@ -194,11 +184,59 @@ namespace pyrikova.Controllers
     }
 }
 ```
+Таким же образом создаём контроллеры для оставшихся классов.
 
-Создаём контроллеры для других сущностей:
+Затем создаём хранилище для каждого класса. Пример создания хранилища для класса Admin (листинг 3):
+Листинг 3 - Хранилище класса "Администратор"
+```csharp
+public class AdminStorage
+    {
+        private Dictionary<int, Admin> Admins { get; } = new Dictionary<int, Admin>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public AdminStorage() => Connection.Open();
 
+        public void Create(Admin admin)
+        {
+            Admins.Add(admin.AdminId, admin);
+            //var command = Connection.CreateCommand();
+            //command.CommandText = "SELECT * FROM .....";
+            //command.ExecuteNonQuery
+            //command.ExecuteReader
+            //command.ExecuteScalar
+        }
 
+        public Admin Read(int adminId)
+        {
+            return Admins[adminId];
+        }
 
+        public Admin Update(int adminId, Admin newAdmin)
+        {
+            Admins[adminId] = newAdmin;
+            return Admins[adminId];
+        }
+
+        public bool Delete(int adminId)
+        {
+            return Admins.Remove(adminId);
+        }
+```
+
+Таким же образом создаём хранилища для оставшихся классов, после чего создаём общее хранилище (листинг 4):
+Листинг 4 - Общее хранилище
+```csharp
+public static class Storage
+    {
+        public static readonly AdminStorage AdminStorage = new();
+        public static readonly FeedbackStorage FeedbackStorage = new();
+        public static readonly CoachStorage CoachStorage = new();
+        public static readonly WorkoutRecordStorage WorkoutRecordStorage = new();
+        public static readonly NewsStorage NewsStorage = new();
+        public static readonly PersonalDataStorage PersonalDataStorage = new();
+        public static readonly ScheduleStorage ScheduleStorage = new();
+        public static readonly SubscriptionStorage SubscriptionStorage = new();
+    }
+```
 
 ## 4 Тестирование информационной системы <a name="тестирование"></a>
 
