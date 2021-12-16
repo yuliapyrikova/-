@@ -22,33 +22,15 @@ namespace pyrikova.Controllers
         }
 
         [HttpPost]
-        public string Update(string str)
+        public Admin Update(int adminId, Admin newAdmin)
         {
-            return str;
+            return Storage.AdminStorage.Update(adminId, newAdmin);
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public bool Delete(int adminId)
         {
-            return str;
-        }
-
-        [HttpGet("get-shedule")]
-        public string Scheduling(string str)
-        {
-            return str; // Метод составления расписания
-        }
-
-        [HttpGet("request-feedback")]
-        public string RequestForFeedback(string str)
-        {
-            return str; // Метод запроса отзыва
-        }
-
-        [HttpPost("create-news")]
-        public string CreateNews(string str)
-        {
-            return str; // Метод создания ленты новостей
+            return Storage.AdminStorage.Delete(adminId); ;
         }
     }
 }

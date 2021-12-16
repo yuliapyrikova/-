@@ -22,15 +22,15 @@ namespace pyrikova.Controllers
         }
 
         [HttpPatch]
-        public string Update(string str)
+        public Feedback Update(int feedbackId, Feedback newFeedback)
         {
-            return str;
+            return Storage.FeedbackStorage.Update(feedbackId, newFeedback);
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public bool Delete(int feedbackId)
         {
-            return str;
+            return Storage.FeedbackStorage.Delete(feedbackId);
         }
     }
 }

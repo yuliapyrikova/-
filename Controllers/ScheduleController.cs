@@ -22,15 +22,15 @@ namespace pyrikova.Controllers
         }
 
         [HttpPatch]
-        public string Update(string str)
+        public Schedule Update(int scheduleId, Schedule newSchedule)
         {
-            return str;
+            return Storage.ScheduleStorage.Update(scheduleId, newSchedule);
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public bool Delete(int scheduleId)
         {
-            return str;
+            return Storage.ScheduleStorage.Delete(scheduleId);
         }
     }
 }

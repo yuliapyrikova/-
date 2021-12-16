@@ -22,15 +22,15 @@ namespace pyrikova.Controllers
         }
 
         [HttpPatch]
-        public string Update(string str)
+        public News Update(int newsId, News newNews)
         {
-            return str;
+            return Storage.NewsStorage.Update(newsId, newNews);
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public bool Delete(int newsId)
         {
-            return str;
+            return Storage.NewsStorage.Delete(newsId);
         }
     }
 }

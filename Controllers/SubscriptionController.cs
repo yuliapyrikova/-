@@ -22,15 +22,15 @@ namespace pyrikova.Controllers
         }
 
         [HttpPatch]
-        public string Update(string str)
+        public Subscription Update(int subscriptionNumber, Subscription newSubscription)
         {
-            return str;
+            return Storage.SubscriptionStorage.Update(subscriptionNumber, newSubscription);
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public bool Delete(int subscriptionNumber)
         {
-            return str;
+            return Storage.SubscriptionStorage.Delete(subscriptionNumber);
         }
     }
 }

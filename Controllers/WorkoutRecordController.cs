@@ -22,15 +22,9 @@ namespace pyrikova.Controllers
         }
 
         [HttpPatch]
-        public string Update(string str)
+        public WorkoutRecord Update(int workoutRecordId, WorkoutRecord newWorkoutRecord)
         {
-            return str;
-        }
-
-        [HttpDelete]
-        public string Delete(string str)
-        {
-            return str;
+            return Storage.WorkoutRecordStorage.Update(workoutRecordId, newWorkoutRecord);
         }
     }
 }

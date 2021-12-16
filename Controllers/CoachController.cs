@@ -22,21 +22,15 @@ namespace pyrikova.Controllers
         }
 
         [HttpPatch]
-        public string Update(string str)
+        public Coach Update(int coachId, Coach newCoach)
         {
-            return str;
+            return Storage.CoachStorage.Update(coachId, newCoach);
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public bool Delete(int coachId)
         {
-            return str;
-        }
-
-        [HttpPost("enter-account")]
-        public string EnterAccount(string str)
-        {
-            return str; // Метод входа в личный кабинет
+            return Storage.CoachStorage.Delete(coachId);
         }
     }
 }
