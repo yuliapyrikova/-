@@ -322,16 +322,15 @@ public static class Storage
 ## Список использованных источников <a name="ссылки"></a>
 
 При разработке информационной системы были использованы следующие электронные ресурсы:
-
-[1] Draw.io [Электронный ресурс]. – Режим доступа: https://app.diagrams.net/. – Дата доступа: 02.09.2021.
-[2] PlantUML [Электронный ресурс]. – Режим доступа: https://plantuml.com/ru/. – Дата доступа: 02.09.2021.
-[3] METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.1.php. – Дата доступа: 06.11.2021.
-[4] METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.4.php. – Дата доступа: 06.11.2021.
-[5] JournalDev [Электронный ресурс]. – Режим доступа: https://www.journaldev.com/16774/sql-data-types. – Дата доступа: 11.11.2021.
-[6] Yclients [Электронный ресурс]. – Режим доступа: https://www.yclients.com/fitness. – Дата доступа: 20.11.2021.
-[7] 1С:Фитнес клуб [Электронный ресурс]. – Режим доступа: https://1c.fitness/. – Дата доступа: 20.11.2021.
-[8] Создание спортивного сайта [Электронный ресурс]. – Режим доступа: https://web-valley.ru/articles/fitnes-lending. – Дата доступа: 05.10.2021.
-[9] Разработка сайта для фитнес-клуба [Электронный ресурс]. – Режим доступа: https://redkrab.ru/portfolio/saiti/razrabotka-sajta-moskovskogo-fitnes-kluba/. – Дата доступа: 07.10.2021.
+1. Draw.io [Электронный ресурс]. – Режим доступа: https://app.diagrams.net/. – Дата доступа: 02.09.2021.
+2. PlantUML [Электронный ресурс]. – Режим доступа: https://plantuml.com/ru/. – Дата доступа: 02.09.2021.
+3. METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.1.php. – Дата доступа: 06.11.2021.
+4. METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.4.php. – Дата доступа: 06.11.2021.
+5. JournalDev [Электронный ресурс]. – Режим доступа: https://www.journaldev.com/16774/sql-data-types. – Дата доступа: 11.11.2021.
+6. Yclients [Электронный ресурс]. – Режим доступа: https://www.yclients.com/fitness. – Дата доступа: 20.11.2021.
+7. 1С:Фитнес клуб [Электронный ресурс]. – Режим доступа: https://1c.fitness/. – Дата доступа: 20.11.2021.
+8. Создание спортивного сайта [Электронный ресурс]. – Режим доступа: https://web-valley.ru/articles/fitnes-lending. – Дата доступа: 05.10.2021.
+9. Разработка сайта для фитнес-клуба [Электронный ресурс]. – Режим доступа: https://redkrab.ru/portfolio/saiti/razrabotka-sajta-moskovskogo-fitnes-kluba/. – Дата доступа: 07.10.2021.
 
 ***
  
