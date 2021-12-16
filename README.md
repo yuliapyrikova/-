@@ -78,7 +78,7 @@
 
 ## 2 Сравнительный анализ существующих решений <a name="анализ"></a>
 
-Продвижение фитнес бизнеса через Интернет на данный момент является одним из ключевых каналов по привлечению потенциальных клиентов. В наши дни у всех современных клубов уже давно есть сайт или мобильное приложение. Рассмотрим два уже существующих сайта потенциальных конкурентов "Yclients" (https://www.yclients.com/fitness) и "1С:Фитнес клуб" (https://1c.fitness/) и их особенности.
+Продвижение фитнес бизнеса через Интернет на данный момент является одним из ключевых каналов по привлечению потенциальных клиентов. В наши дни у всех современных клубов уже давно есть сайт или мобильное приложение. Рассмотрим два уже существующих сайта потенциальных конкурентов "Yclients" [6] и "1С:Фитнес клуб" [7] и их особенности.
 
 Исследование программы для управления фитнес-клубом "Yclients" показало, что 25% записей создаются в нерабочие часы компаний, поэтому, чтобы не упускать клиентов, была создана форма онлайн-записи на сайте, которая позволит клиентам записаться на тренировку самостоятельно в любое время. Кроме того, чтобы посетители не забывали про занятие, были созданы напоминания. Благодаря автоматическим уведомлениям клиенты не будут забывать о своих записях. А для удобсства записи расписание занятий находится на одном экране. Единый график проведения групповых и индивидуальных тренировок позволяет администратору быстро оценить наргузку и выбрать время для создания новой записи. Просматривать расписание можно в рамках дня или на неделю вперёд. Тренеры и администраторы могут управлять записями с компьютеры, телефона или планшета и сообщать клиентам об изменениях в занятии в несколько кликов.
 
@@ -93,56 +93,49 @@
 
 ## 3 Разработка информационной системы<a name="разработка"></a>
 
-введение
+Разработка информационной системы состоит из двух этапов: проектирования и реализации. В проектировании информационной системы разрабатываем USE-CASE, BPMN и ER диаграммы. Они необходимы для графического описания лиц, участвующих в бизнес-процессе, описания действий участников процесса и их связей между собой внутри системы. Реализация информационной системы представляет собой готовый программный продукт с описанием его составляющих и текстом программного кода.
 
 ***
 
 ## 3.1 Проектирование информационной системы <a name="проектирование"></a> 
 
-Разработка информационной системы начинается с создания USE-CASE диаграммы, отображающей действующие лица данной системы: Адмиристратор, Тренер, Посетитель.
+Разработка информационной системы начинается с создания USE-CASE диаграммы (или диаграмма потоковых данных), отображающей действующие лица данной системы: Адмиристратор, Тренер, Посетитель (рисунок 1).
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/UseCase.png?raw=true"></p>
+<p align="center">Рисунок 1 - UseCase диаграмма</p>
 
-![alt text](ph/UseCase.png)
+Далее на основе USE-CASE диаграммы создаётся BPMN (Business Process Management Notation - Нотация моделирования бизнес-процессов) диаграмма, которая представляет собой описание графических элементов, используемых для построения схемы протекания рабочего процесса (рисунок 2). Как минимум, такая схема нужна, чтобы выстроить в соответствии с ней бизнес-процесс и понятно регламентировать его для всех участников.
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/BPMN.png?raw=true"></p>
+<p align="center">Рисунок 2 - BPMN диаграмма</p>
 
-Далее на основе USE-CASE диаграммы создаётся BPMN (Business Process Management Notation - Нотация моделирования бизнес-процессов) диаграмма, которая представляет собой описание графических элементов, используемых для построения схемы протекания рабочего процесса. Как минимум, такая схема нуна, чтобы выстроить в соответствии с ней бизнес-процесс и понятно регламентировать его для всех участников.
+Завершающей диаграммой является ER-диаграмма, в которой показано, как разные "сущности" (люди, объекты и т.д.) связаны между собой внутри системы (рисунок 3).
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/EReng.png?raw=true"></p>
+<p align="center">Рисунок 3 - ER-диаграмма</p>
 
-![alt text](ph/BPMN.png)
-
-Завершающей диаграммой является ER-диаграмма, в которой показано, как разные "сущности" (люди, объекты и т.д.) связаны между собой внутри системы.
-
-![alt text](ph/EReng.png)
+***
 
 ## 3.2 Реализация информационной системы <a name="реализация"></a>
 
-На основе ER-диаграммы создаём класс с указанием полей, параметров и типов данных для каждой сущности. Приведём пример создания класса для сущности Admin.
+На основе ER-диаграммы создаём класс с указанием полей, параметров и типов данных для каждой сущности. Приведём пример создания класса для сущности Admin (листинг 1):
 
-```s C#
-namespace pyrikova.Domain
-{
-
+Листинг 1 - Класс "Администатор"
+```C# 
     public class Admin
     {
-
         public int AdminId { get; set; }
-
         public int New { get; set; }
-
         public int Subscription { get; set; }
     }
-}
 ```
 
-Создаём классы для других сущностей:
+Таким же образом создаём классы для таких сущностей ER-диаграммы как Тренер, Отзыв, Новости, Личные данные, Расписание, Абонемент и Запись на тренировку.
 
-![alt text](ph/1.png)
+Далее для каждой сущности создаём контроллеры с методами Create, Read, Update, Delite. Приведём пример создания контроллера для сущности Admin (листинг 2):
 
-Далее для каждой сущности создаём контроллеры с методами Create, Read, Update, Delite. Приведём пример создания контроллера для сущности Admin:
-
-```s C#
-using pyrikova.Domain;
-using pyrikova.Repository;
-using Microsoft.AspNetCore.Mvc;
-
-namespace pyrikova.Controllers
+Листинг 2 - Контроллер класса "Администатор"
+```csharp 
 {
     [ApiController]
     [Route("/admin")]
@@ -162,62 +155,180 @@ namespace pyrikova.Controllers
         }
 
         [HttpPost]
-        public string Update(string str)
+        public Admin Update(int adminId, Admin newAdmin)
         {
-            return str;
+            return Storage.AdminStorage.Update(adminId, newAdmin);
         }
 
         [HttpDelete]
-        public string Delete(string str)
+        public bool Admin Delete(int adminId)
         {
-            return str;
-        }
-
-        [HttpGet("get-shedule")]
-        public string Scheduling(string str)
-        {
-            return str; // Метод составления расписания
-        }
-
-        [HttpGet("request-feedback")]
-        public string RequestForFeedback(string str)
-        {
-            return str; // Метод запроса отзыва
-        }
-
-        [HttpPost("create-news")]
-        public string CreateNews(string str)
-        {
-            return str; // Метод создания ленты новостей
+            return Storage.AdminStorage.Delite(adminId); ;
         }
     }
 }
 ```
+Таким же образом создаём контроллеры для оставшихся классов.
 
-Создаём контроллеры для других сущностей:
+Затем создаём хранилище для каждого класса. Пример создания хранилища для класса Admin (листинг 3):
 
+Листинг 3 - Хранилище класса "Администратор"
+```csharp
+public class AdminStorage
+    {
+        private Dictionary<int, Admin> Admins { get; } = new Dictionary<int, Admin>();
+        //private SqlConnection Connection { get; } = new SqlConnection("Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;");
+        //public AdminStorage() => Connection.Open();
 
+        public void Create(Admin admin)
+        {
+            Admins.Add(admin.AdminId, admin);
+            //var command = Connection.CreateCommand();
+            //command.CommandText = "SELECT * FROM .....";
+            //command.ExecuteNonQuery
+            //command.ExecuteReader
+            //command.ExecuteScalar
+        }
 
+        public Admin Read(int adminId)
+        {
+            return Admins[adminId];
+        }
+
+        public Admin Update(int adminId, Admin newAdmin)
+        {
+            Admins[adminId] = newAdmin;
+            return Admins[adminId];
+        }
+
+        public bool Delete(int adminId)
+        {
+            return Admins.Remove(adminId);
+        }
+```
+
+Таким же образом создаём хранилища для оставшихся классов, после чего создаём общее хранилище (листинг 4):
+
+Листинг 4 - Общее хранилище
+```csharp
+public static class Storage
+    {
+        public static readonly AdminStorage AdminStorage = new();
+        public static readonly FeedbackStorage FeedbackStorage = new();
+        public static readonly CoachStorage CoachStorage = new();
+        public static readonly WorkoutRecordStorage WorkoutRecordStorage = new();
+        public static readonly NewsStorage NewsStorage = new();
+        public static readonly PersonalDataStorage PersonalDataStorage = new();
+        public static readonly ScheduleStorage ScheduleStorage = new();
+        public static readonly SubscriptionStorage SubscriptionStorage = new();
+    }
+```
 
 ## 4 Тестирование информационной системы <a name="тестирование"></a>
+
+После запуска программы открывается страница Swagger UI со списком сущностей и операций над ними (рисунок 4):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/4.png?raw=true"></p>
+<p align="center">Рисунок 4 - Cтраница Swagger UI</p> 
+
+Проверка работы методов CRUD (Create - создание, Read - чтение, Update - обновление, Delete - удаление) в сущности Admin (рисунок 5):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/5.png?raw=true"></p>
+<p align="center">Рисунок 5 - Проверка работы методов CRUD</p> 
+
+1. Create позволяет добавлять новые строки в вашу таблицу (рисунок 6):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/6.png?raw=true"></p>
+<p align="center">Рисунок 6 - Окно метода создания</p> 
+
+Ввод необходимых данных об администраторе в соответствующие поля (рисунок 7):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/7.png?raw=true"></p>
+<p align="center">Рисунок 7 - Работа с методом создания</p> 
+
+После успешного выполнения операции сервер выдаёт ответ (рисунок 8):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/8.png?raw=true"></p>
+<p align="center">Рисунок 8 - Результат выполнения операции создания</p> 
+
+2. Функция чтения Read похожа на функцию поиска, так как позволяет извлекать определенные записи и считывать их значения (рисунок 9):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/9.png?raw=true"></p>
+<p align="center">Рисунок 9 - Окно функции чтения</p> 
+
+Считывание информации об уже созданном админе по его Id (рисунок 10):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/10.png?raw=true"></p>
+<p align="center">Рисунок 10 - Работа с методом чтения</p> 
+
+После выполнения операции сервер выдаёт об админе информацию, которая была создана в Create (рисунок 11):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/11.png?raw=true"></p>
+<p align="center">Рисунок 11 - Результат выполнения операции чтения</p> 
+
+3. Функция редактирования записи Update используется для изменения существующих записей в базе данных (рисунок 12):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/12.png?raw=true"></p>
+<p align="center">Рисунок 12 - Окно метода обновления</p> 
+
+Измениение информации об админе, для этого сначала нужно ввести его номер и затем новые данные (рисунок 13):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/13.png?raw=true"></p>
+<p align="center">Рисунок 13 - Работа с методом обновления</p> 
+
+После выполнения операции сервер выдаёт новую информацию о том же админе (рисунок 14):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/14.png?raw=true"></p>
+<p align="center">Рисунок 14 - Результат выполнения операции обновления</p> 
+
+Функцией Read проверяется вышеуказанная операция. После срабатывания сервер выдает новую информацию об админе (рисунок 15):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/15.png?raw=true"></p>
+<p align="center">Рисунок 15 - Результат выполнения операции чтения после обновления данных</p> 
+
+4. Функция Delete используется для удаления записи по Id. Если операция удаления сработает успешно, то ответ сервера будет "true", в противном случае "false" (рисунок 16):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/16.png?raw=true"></p>
+<p align="center">Рисунок 16 - Окно метода удаления</p> 
+
+Удаление админа по его Id (рисунок 17):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/17.png?raw=true"></p>
+<p align="center">Рисунок 17 - Работа с методом удаления</p> 
+
+После выполнения операции ответ сервера (рисунок 18):
+<p align="center">
+<img src=https://github.com/yuliapyrikova/pyrikova/blob/main/ph/18.png?raw=true"></p>
+<p align="center">Рисунок 18 - Раезультат выполнения метода удаления</p> 
+
+Проверка вышеописанного действия с помощью Read, считывание информацию об удалённом админе (рисунок 19):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/19.png?raw=true"></p>
+<p align="center">Рисунок 19 - Работа с операцией чтения</p> 
+
+После срабатывания программа не выдаёт информации об этом админе (рисунок 20):
+<p align="center">
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/20.png?raw=true"></p>
+<p align="center">Рисунок 20 - Результат выполнения операции чтения после удаления данных</p>
 
 ***
 
 ## Заключение <a name="заключение"></a>
 
-если всё работать будет, то и итог будет...
+РАБОТАЕТ!
 
 ***
 
 ## Список использованных источников <a name="ссылки"></a>
 
 При разработке информационной системы были использованы следующие электронные ресурсы:
-1. Draw.io [Электронный ресурс]. – Режим доступа: https://app.diagrams.net/. – Дата доступа: 02.09.2021.
-2. PlantUML [Электронный ресурс]. – Режим доступа: https://plantuml.com/ru/. – Дата доступа: 02.09.2021.
-3. Википедия [Электронный ресурс]. – Режим доступа: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete. – Дата доступа: 23.09.2021.
-4. METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.1.php. – Дата доступа: 06.11.2021.
-5. METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.4.php. – Дата доступа: 06.11.2021.
-6. JournalDev [Электронный ресурс]. – Режим доступа: https://www.journaldev.com/16774/sql-data-types. – Дата доступа: 11.11.2021.
+[1] Draw.io [Электронный ресурс]. – Режим доступа: https://app.diagrams.net/. – Дата доступа: 02.09.2021.
+[2] PlantUML [Электронный ресурс]. – Режим доступа: https://plantuml.com/ru/. – Дата доступа: 02.09.2021.
+[3] METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.1.php. – Дата доступа: 06.11.2021.
+[4] METANIT.COM [Электронный ресурс]. – Режим доступа: https://metanit.com/sharp/tutorial/3.4.php. – Дата доступа: 06.11.2021.
+[5] JournalDev [Электронный ресурс]. – Режим доступа: https://www.journaldev.com/16774/sql-data-types. – Дата доступа: 11.11.2021.
+[6] Yclients [Электронный ресурс]. – Режим доступа: https://www.yclients.com/fitness. – Дата доступа: 20.11.2021.
+[7] 1С:Фитнес клуб [Электронный ресурс]. – Режим доступа: https://1c.fitness/. – Дата доступа: 20.11.2021.
 
 ***
  
