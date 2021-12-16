@@ -298,8 +298,8 @@ public static class Storage
 
 После выполнения операции ответ сервера (рисунок 18):
 <p align="center">
-<img src=https://github.com/yuliapyrikova/pyrikova/blob/main/ph/18.png?raw=true"></p>
-<p align="center">Рисунок 18 - Раезультат выполнения метода удаления</p> 
+<img src="https://github.com/yuliapyrikova/pyrikova/blob/main/ph/18.png?raw=true"></p>
+<p align="center">Рисунок 18 - Результат выполнения метода удаления</p> 
 
 Проверка вышеописанного действия с помощью Read, считывание информацию об удалённом админе (рисунок 19):
 <p align="center">
