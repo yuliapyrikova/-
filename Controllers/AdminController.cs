@@ -32,5 +32,11 @@ namespace pyrikova.Controllers
         {
             return Storage.AdminStorage.Delete(adminId); ;
         }
+
+        [HttpGet("RegAuthors")]
+        public string RegAuthors(string str)
+        {
+            return str;// "Метод регистрации на выставке"
+        }
     }
 }
